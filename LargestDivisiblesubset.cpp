@@ -7,7 +7,7 @@ public:
         for(int next = start+1; next < nums.size(); next++) {
             if(nums[next] % nums[start]) continue;
             auto res = LDS(nums, next);
-            if(size(res) >= size(dp[start])) dp[start] = res;
+            if(res.size() >= dp[start].size()) dp[start] = res;
         }
         dp[start].push_back(nums[start]);
         return dp[start];
